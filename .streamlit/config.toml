@@ -1,0 +1,8 @@
+# Aurora visual identity (portfolio only)
+[theme]
+base = "dark"
+primaryColor = "#8178F6"
+backgroundColor = "#0C1223"
+secondaryBackgroundColor = "#17223A"
+textColor = "#EEF2FF"
+font = "sans serif"

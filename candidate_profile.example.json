@@ -1,0 +1,9 @@
+{
+  "status": "unapproved_public_example",
+  "purpose": "Fictional example only. Review evidence before changing status for live scans.",
+  "candidate": "Example Candidate",
+  "professional_experience": [],
+  "education": {"highest_completed_degree_verified": null},
+  "preferences": {"citizenship": false, "us_work_authorized": false},
+  "data_quality_warnings": ["No real candidate evidence has been supplied."]
+}

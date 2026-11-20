@@ -1,0 +1,136 @@
+{
+  "dataset_version": 1,
+  "fixture_type": "synthetic_application_history",
+  "notes": [
+    "These are fictional jobs, not real vacancies.",
+    "Saved status must not be treated as Applied.",
+    "Same company and title do not prove identical requisitions.",
+    "Tracking parameters must not create a new job identity.",
+    "Application suppression is independent of freshness and geography."
+  ],
+  "cases": [
+    {
+      "case_id": "applied",
+      "candidate": {
+        "source": "Greenhouse",
+        "company": "ExampleCorp",
+        "title": "IT Support Specialist",
+        "source_id": "10001",
+        "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10001"
+      },
+      "saved_history": [
+        {
+          "source": "Greenhouse",
+          "company": "ExampleCorp",
+          "title": "IT Support Specialist",
+          "source_id": "10001",
+          "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10001",
+          "status": "Applied"
+        }
+      ],
+      "expected_application_gate": "suppress",
+      "test_scope": "application-history identity and suppression only"
+    },
+    {
+      "case_id": "rejected",
+      "candidate": {
+        "source": "Greenhouse",
+        "company": "ExampleCorp",
+        "title": "IT Support Specialist",
+        "source_id": "10002",
+        "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10002"
+      },
+      "saved_history": [
+        {
+          "source": "Greenhouse",
+          "company": "ExampleCorp",
+          "title": "IT Support Specialist",
+          "source_id": "10002",
+          "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10002",
+          "status": "Rejected"
+        }
+      ],
+      "expected_application_gate": "suppress",
+      "test_scope": "application-history identity and suppression only"
+    },
+    {
+      "case_id": "saved",
+      "candidate": {
+        "source": "Greenhouse",
+        "company": "ExampleCorp",
+        "title": "IT Support Specialist",
+        "source_id": "10003",
+        "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10003"
+      },
+      "saved_history": [
+        {
+          "source": "Greenhouse",
+          "company": "ExampleCorp",
+          "title": "IT Support Specialist",
+          "source_id": "10003",
+          "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10003",
+          "status": "Saved"
+        }
+      ],
+      "expected_application_gate": "preserve",
+      "test_scope": "application-history identity and suppression only"
+    },
+    {
+      "case_id": "different_requisition",
+      "candidate": {
+        "source": "Greenhouse",
+        "company": "ExampleCorp",
+        "title": "IT Support Specialist",
+        "source_id": "10004",
+        "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10004"
+      },
+      "saved_history": [
+        {
+          "source": "Greenhouse",
+          "company": "ExampleCorp",
+          "title": "IT Support Specialist",
+          "source_id": "10005",
+          "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10005",
+          "status": "Applied"
+        }
+      ],
+      "expected_application_gate": "preserve",
+      "test_scope": "application-history identity and suppression only"
+    },
+    {
+      "case_id": "tracking_url_changed",
+      "candidate": {
+        "source": "Greenhouse",
+        "company": "ExampleCorp",
+        "title": "IT Support Specialist",
+        "source_id": "10006",
+        "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10006?utm_source=linkedin"
+      },
+      "saved_history": [
+        {
+          "source": "Greenhouse",
+          "company": "ExampleCorp",
+          "title": "IT Support Specialist",
+          "source_id": "10006",
+          "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10006",
+          "status": "Applied"
+        }
+      ],
+      "expected_application_gate": "suppress",
+      "test_scope": "application-history identity and suppression only"
+    },
+    {
+      "case_id": "untracked",
+      "candidate": {
+        "source": "Greenhouse",
+        "company": "ExampleCorp",
+        "title": "IT Support Specialist",
+        "source_id": "10007",
+        "url": "https://job-boards.greenhouse.io/examplecorp/jobs/10007"
+      },
+      "saved_history": [],
+      "expected_application_gate": "preserve",
+      "test_scope": "application-history identity and suppression only"
+    }
+  ]
+}

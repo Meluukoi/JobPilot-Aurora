@@ -1,0 +1,17 @@
+{
+  "target_role_families": {
+    "IT Support": ["it support", "help desk", "technical support"],
+    "Customer Support": ["customer support", "client support"]
+  },
+  "skills": ["troubleshooting", "customer service", "ticketing"],
+  "home_country": "United States",
+  "home_state": "WA",
+  "preferred_locations": ["Remote - United States"],
+  "exclude_title_terms": ["director", "principal"],
+  "soft_penalty_title_terms": ["lead"],
+  "max_experience_years": 3,
+  "degree_status": "unknown",
+  "citizenship_status": "unknown",
+  "domain_penalty_terms": ["licensed physician"],
+  "advanced_specialty_terms": ["architect"]
+}
